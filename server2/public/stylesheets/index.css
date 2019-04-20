@@ -1,0 +1,11 @@
+.bd-placeholder-img {
+  width: 100%;
+  height: 80%; }
+
+.theRect {
+  width: 100%;
+  height: 100%;
+  fill: #777; }
+
+#imgCheck {
+  background-image: url("gg.jpg"); }
