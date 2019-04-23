@@ -31,13 +31,14 @@ router.post('/add',function(req,res,next){
             //save the job
             newJob.save(function (err) {
                 if (err){
+                    //handling the error
                     res.render('error', {whatKind: "The job already exists with the given Job ID"});
-                    // res.redirect('error', {whatkind : "job already exists with this id"});
-                    // return res.json({success: false, msg: 'job already exists.'});
+
 
                 }else   {
+                    //redirecting to jobs page after success
                     res.redirect('jobs');
-                    // res.json({success:true, msg:"new job has been created"})
+
                 }
 
 

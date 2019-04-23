@@ -8,4 +8,29 @@
   fill: #777; }
 
 #imgCheck {
-  background-image: url("gg.jpg"); }
+  background-image: url("./../images/company1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 300px;
+  xmlns: "http://www.w3.org/2000/svg";
+  preserveAspectRatio: "xMidYMid slice";
+  focusable: "false";
+  role: "img"; }
+
+#imgCheck2 {
+  background-image: url("./../images/company2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 300px;
+  xmlns: "http://www.w3.org/2000/svg";
+  preserveAspectRatio: "xMidYMid slice";
+  focusable: "false";
+  role: "img"; }
+
+#boxes {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+  /* or 950px */ }

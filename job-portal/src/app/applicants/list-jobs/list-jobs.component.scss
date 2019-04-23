@@ -1,0 +1,34 @@
+table {
+    width: 100%;
+  }
+  
+  td,th,tr {
+    width: 25%;
+  }
+
+  .type {
+    padding-left: -10px;
+  }
+
+.list{
+  background-color: rgba(0,0,0,0.8);
+}
+.text{
+  color:white;
+  
+}
+
+input[type=text] {
+  padding: 0;
+  height: 30px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+  width: 300px;
+  border-color:grey;
+  border-radius: 5px;
+}

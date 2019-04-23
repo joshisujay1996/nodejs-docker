@@ -25,7 +25,8 @@ var JobSchema = new Schema({
 
     },
     //current format is epoch
-    time : { type: String, default: (new Date()) }
+    time : { type: String, default: (new Date()) },
+    company:{type:String,default: "Misco Networks"}
 
 
 });

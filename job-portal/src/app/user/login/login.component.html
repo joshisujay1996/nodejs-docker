@@ -1,0 +1,36 @@
+<body style="background-color: rgba(0,0,0,0.8);">
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>LOGIN</h3>
+<br>
+<img src="assets/images/login.png">
+<br>
+<br>
+<!---orginal-->
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+
+  <label class="name">Username:</label>&nbsp;<input type="text" formControlName='username'/><br/><br/>
+  <div *ngIf=" (loginForm.controls.username.errors != null)">
+    <div *ngIf="(loginForm.controls.username.errors.required)">
+      <p>Username is required</p>
+    </div>
+    <div *ngIf="(loginForm.controls.username.errors.email)">
+      <p>Invalid email format</p>
+    </div>
+  </div>
+  <label class="name">Password:</label>&nbsp;&nbsp;<input type="password" formControlName='password'/><br/><br/>
+  <div *ngIf=" (loginForm.controls.password.errors != null)">
+    <div *ngIf="(loginForm.controls.password.errors.required)">
+      <p>Password is required</p>
+    </div>
+  </div>
+  <br/>
+  <button class="button" type="submit" [disabled]="loginForm.status.toLowerCase() === 'invalid'">Login</button>
+</form>
+<!---orginal-->
+<br>
+<br>
+</body>

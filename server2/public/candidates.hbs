@@ -1,0 +1,13 @@
+
+<h3>View Candidates</h3>
+{{#each list2}}
+    <div class="viewDetails">
+        <strong><ul>Job Title: &nbsp;{{this.jobtitle}} </ul></strong>
+        <ul>Job ID: &nbsp;{{this.jobid}} </ul>
+        <ul>Applied on: {{this.time}}</ul>
+        <ul>Candidate Name: {{this.username}}</ul>
+        <ul>Candidate Email: {{this.email}}</ul>
+        <ul><a href="{{this.resume}}" download>View resume</a></ul>
+        <br>
+    </div>
+{{/each}}

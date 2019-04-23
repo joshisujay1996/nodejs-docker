@@ -1,0 +1,65 @@
+<body class="list">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3 class="text" style="margin-left: 50px;" > JOB LISTINGS </h3>
+
+<!--Display for job table header-->
+  <input [(ngModel)]="searchText" placeholder="search text goes here" style="margin-left: 50px;" type="text"/>  
+  <br>
+  <br>
+
+  <table style="margin-left: 50px;">
+    <tr>
+      <th class="text"> JOB TITLE </th>
+      <th class="text"> JOB TYPE </th>
+      <th class="text"> COMPANY </th>
+      <th class="text"> DATE POSTED </th>
+    </tr>
+  </table>
+
+<!--Job listings from the server-->
+<div class="jobs" *ngFor = "let job of jobs">
+  <table cellpadding="10" style="margin-left: 50px;">
+    <tr >
+      <td>
+      <!-- Route to details page when a particular job is clicked and set the local stoarge variable-->
+        <a class="text" routerLink="/details/{{job._id}}" (click) = "setItem(job._id,job.jobid,job.jobtitle)">
+                {{job.jobtitle}}
+                
+        </a>
+      </td>
+       <br><br>
+      <td class="type">
+        <span class="text" routerLink="">
+              {{job.jobtype}}
+              
+        </span>
+      </td>
+      <td class="type">
+        <span class="text" routerLink="">
+              {{job.company}}
+              
+        </span>
+      </td>
+      <br><br><br>
+      <td class="type">
+        <span class="text" routerLink=""  >
+              {{job.time}}
+              
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>

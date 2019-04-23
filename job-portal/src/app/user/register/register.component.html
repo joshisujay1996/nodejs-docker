@@ -1,0 +1,33 @@
+<body style="background-color: rgba(0,0,0,0.8);">
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>SIGN UP FOR JOBSTORM</h3>
+<br>
+<img src="assets/images/register.png">
+<br>
+<br>
+<form [formGroup]='registerForm' (ngSubmit)="register()" class="form">
+    <label class="name">Username:</label><input type="text" formControlName='username'/><br/><br/>
+    <div *ngIf=" (registerForm.controls.username.errors != null)">
+        <div *ngIf="(registerForm.controls.username.errors.required)">
+          <p>Username is required</p>
+        </div>
+        <div *ngIf="(registerForm.controls.username.errors.email)">
+          <p>Invalid email format</p>
+        </div>
+      </div>
+    <label class="name">Password:</label>&nbsp;<input type="password" formControlName='password'/><br/><br/>
+    <div *ngIf=" (registerForm.controls.password.errors != null)">
+        <div *ngIf="(registerForm.controls.password.errors.required)">
+          <p>Password is required</p>
+        </div>
+      </div>
+
+    <button class="button" type="submit" [disabled]="registerForm.status.toLowerCase() === 'invalid'">Sign Up</button>
+ </form>
+<br>
+<br>
+</body>

@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="file">Select Resume</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)"
+           placeholder="Upload file" accept=".pdf,.doc,.docx"> <br>
+
+    <button (click)="onUpload()">Send Application</button>
+</div>

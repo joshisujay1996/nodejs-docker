@@ -1,0 +1,16 @@
+<body class="list">
+<br>
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="job" class="jobs">
+
+    <h2 class="entry">{{job.jobtitle | uppercase}}</h2>
+    <div class="entry"><span>Job ID: </span>{{job.jobid}}</div> <br>
+    <div class="entry"><span>Job Type: </span>{{job.jobtype}}</div> <br>
+    <div class="entry"><span>Time Posted: </span>{{job.time}}</div> <br>
+    <div class="entry"><span>Description: </span> <br> {{job.jobdescription}}</div> <br>
+    <button mat-raised-button (click)="openDialog()">Apply</button>
+</div>
+</body>

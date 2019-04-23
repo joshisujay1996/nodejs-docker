@@ -1,8 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+//multer required for file upload
 var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
+var path = require('path');
+//setting multer path
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname)) //Appending .jpg
+    }
+});
+var upload = multer({ storage: storage });
+
+
 //import the link to connect to db
 var config = require('../controller/database');
 var sendSuccessMail = require('../controller/mailer');
@@ -22,7 +35,7 @@ router.get('/jobs', function(req, res) {
             //sending the response
             res.status(200).send(jobs);
 
-        });
+        }).sort({"time":-1});
             
         });
 //get jobs by its JobID
@@ -37,7 +50,7 @@ router.get('/jobs/:id', function (req,res) {
 //accept candidates to company database
 router.post('/candidates',upload.single('resume'),function (req,res) {
     if( !req.body.jobid || !req.body.jobtitle || !req.body.username
-        || !req.body.email || !req.file )
+        || !req.body.email )
     //checking if all fields are entered
     {
         res.status(400).json({success: false, msg: 'Please enter all required details'});}
@@ -79,7 +92,7 @@ router.post('/candidates',upload.single('resume'),function (req,res) {
                         res.send('fail')
                     } else {
                         console.log('Email sent: ' + info.response);
-                        res.status(200).send('ez!! done')
+                        res.status(200).send('Mail has been sent to candidate')
                     }
                 });
 

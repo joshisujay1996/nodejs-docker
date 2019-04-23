@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 var CandidateSchema = new Schema({
     jobid: {
-        type: Number,
+        type: String,
         required : true
     },
     jobtitle:{
