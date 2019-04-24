@@ -106,5 +106,21 @@ router.post('/candidates',upload.single('resume'),function (req,res) {
 
 });
 
+//to view applied candidates
+router.get('/viewcandidates',function (req,res) {
+    Candidates.find({},function (err,candidates) {
+       if(err){
+           //error with database if something goes wrong
+           res.status(400).send(err);
+       }
+       //rendering candidates page
+       res.status(200).send(candidates);
+ 
+       //sorting values in dec order
+    }).sort({"time":-1});
+ 
+ });
+
+
 //export the module
 module.exports = router;

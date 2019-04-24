@@ -28,6 +28,7 @@ var CandidateSchema = new Schema({
         required :true
 
     },
+    company:{type:String, default: "Pineapple, Inc"},
     //current format is epoch
     time : { type: String, default: (new Date()) }
 
